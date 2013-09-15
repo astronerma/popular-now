@@ -1,0 +1,461 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"l",
+				"l"
+			],
+			[
+				"s",
+				"s"
+			],
+			[
+				"i",
+				"i"
+			],
+			[
+				"child",
+				"child"
+			],
+			[
+				"a",
+				"a"
+			],
+			[
+				"value",
+				"value"
+			],
+			[
+				"gz",
+				"gz"
+			],
+			[
+				"capacity",
+				"capacity"
+			],
+			[
+				"w",
+				"w"
+			],
+			[
+				"k",
+				"k"
+			],
+			[
+				"it",
+				"it"
+			],
+			[
+				"frien",
+				"unique_friends"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"select",
+				"selectAll"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/aszostek/Projects/Insight/Twitter/mysql_tests.py",
+			"settings":
+			{
+				"buffer_size": 205,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/aszostek/Projects/Insight/Twitter/tests.py",
+			"settings":
+			{
+				"buffer_size": 2078,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views.py",
+			"settings":
+			{
+				"buffer_size": 652,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/templates/index.html",
+			"settings":
+			{
+				"buffer_size": 528,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 153.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/aszostek/Projects/Insight/Twitter/naive_bayes.py",
+		"/Users/aszostek/Projects/Insight/Twitter/extract_data.py",
+		"/Users/aszostek/Projects/Insight/Twitter/naive_bayes_v2.py",
+		"/Users/aszostek/Projects/Insight/Twitter/naive_bayes_v3.py",
+		"/Users/aszostek/Projects/Insight/Twitter/tests.py",
+		"/Users/aszostek/Projects/Insight/Twitter/prepare_slownik.py",
+		"/Users/aszostek/Projects/Insight/Twitter/new_features_v2.py",
+		"/Users/aszostek/Projects/Insight/Twitter/web_setup_notes.txt",
+		"/Users/aszostek/Projects/Insight/Twitter/sql_to_cvs.py",
+		"/Users/aszostek/Projects/Insight/Twitter/incoming_database.py",
+		"/Users/aszostek/Projects/Insight/Twitter/latest_tweets.py",
+		"/Users/aszostek/Projects/Insight/Twitter/tweet_class.py",
+		"/Users/aszostek/Projects/Kaggle/Yelp/Code/read_database.py",
+		"/Users/aszostek/Projects/Kaggle/Amazon/Code/data_graph_resources.py",
+		"/Users/aszostek/Projects/Insight/Twitter/get_last_200.py",
+		"/Users/aszostek/Projects/Insight/Twitter/read_timeline.py",
+		"/Users/aszostek/Projects/Insight/Twitter/Readme",
+		"/Users/aszostek/Projects/Insight/Twitter/tweet_database.py",
+		"/Users/aszostek/Workshops/Introduction_to_DS/assignment1/term_sentiment_v2.py",
+		"/Users/aszostek/Projects/Insight/Twitter/twitter_api.py",
+		"/Users/aszostek/Projects/Insight/Twitter/test.py",
+		"/Users/aszostek/Workshops/Introduction_to_DS/assignment1/term_sentiment_v1.py",
+		"/Users/aszostek/Workshops/Introduction_to_DS/assignment1/twitterstream.py",
+		"/Users/aszostek/Projects/Insight/twitter_api.py",
+		"/Users/aszostek/Projects/Algorithms/Recursion.py",
+		"/Users/aszostek/Projects/Algorithms/Arrays.py",
+		"/Users/aszostek/Projects/Algorithms/Hash_maps.py",
+		"/Users/aszostek/Projects/Algorithms/Sorting.py",
+		"/Users/aszostek/Projects/Algorithms/Strings.py",
+		"/Users/aszostek/Projects/Algorithms/Graphs.py",
+		"/Users/aszostek/Projects/Algorithms/Other.py",
+		"/Users/aszostek/Projects/Algorithms/List_of_algorithms.txt",
+		"/Users/aszostek/Documents/Job_search/Facebook/Questions.txt",
+		"/Users/aszostek/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/aszostek/Projects/Algorithms/Tree_binary_search.py",
+		"/Users/aszostek/Projects/Algorithms/Heap_as_array.py",
+		"/Users/aszostek/Projects/Algorithms/List_flattening.py",
+		"/Users/aszostek/Projects/Algorithms/Singly_linked_list.py",
+		"/Users/aszostek/Projects/Algorithms/Queue.py",
+		"/Users/aszostek/Projects/Algorithms/Stack.py",
+		"/Users/aszostek/Projects/Kaggle/Amazon/Code/ROC_curve_intuition.R",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment4/tsp/solver.py",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment4/tsp/development_notes.markdown",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment4/tsp/atlas_as_graph.py",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment4/tsp/k_opt_v1.py",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment4/tsp/define_data_class.py",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment4/tsp/opt2_v2.py",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment4/tsp/opt2.py",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment4/tsp/create_distance_matrices.py",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment4/tsp/handout.pdf",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment3/coloring/define_graph_class.py",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment3/coloring/solver.py",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment3/coloring/solver_v6.py",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment3/coloring/notes.py",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment3/coloring/coloring_notes.markdown",
+		"/Users/aszostek/Projects/Algorithms/Doubly_linked_list.py",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment3/coloring/solver_v4.py",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment3/coloring/solver_v1.py",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment3/coloring/solver_original.py",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment3/coloring/solver_v2.py",
+		"/Users/aszostek/Desktop/python_for_data_logistics.txt",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment2/knapsack/test.py",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment2/knapsack/ks_v2.py",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment2/knapsack/solver.py",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment2/knapsack/ks_v1.py",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment2/knapsack/binary_tree_v2.py",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment2/knapsack/ks_bound.py",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment2/knapsack/solver_v2.py",
+		"/Users/aszostek/Workshops/Discrete_optimization/Assignments/assignment2/knapsack/solver_orig.py",
+		"/Users/aszostek/Workshops/Introduction_to_DS/Assignments/Data/datasci_course_materials/cloud_quiz/problem5.pig",
+		"/Users/aszostek/Workshops/Introduction_to_DS/Assignments/Data/datasci_course_materials/cloud_quiz/example1.pig",
+		"/Users/aszostek/Workshops/Introduction_to_DS/Assignments/Data/datasci_course_materials/cloud_quiz/training_data.txt",
+		"/Users/aszostek/Projects/Algorithms/Dictionary_sorted_array.py",
+		"/Users/aszostek/Projects/Algorithms/Dictionary_binary_tree.py",
+		"/Users/aszostek/Projects/Algorithms/power.py",
+		"/Users/aszostek/Projects/Data_science/Learning_curve.txt",
+		"/Users/aszostek/Workshops/Introduction_to_DS/Assignments/Data/datasci_course_materials/cloud_quiz/problem2.pig",
+		"/Users/aszostek/Workshops/Introduction_to_DS/Assignments/Data/datasci_course_materials/cloud_quiz/problem4_test.pig",
+		"/Users/aszostek/Workshops/Introduction_to_DS/Assignments/Data/datasci_course_materials/cloud_quiz/training_pig.pig",
+		"/Users/aszostek/Workshops/Introduction_to_DS/Assignments/Data/datasci_course_materials/cloud_quiz/training_data.py",
+		"/Users/aszostek/Workshops/Introduction_to_DS/Assignments/Data/datasci_course_materials/cloud_quiz/problem6.pig",
+		"/Users/aszostek/Projects/Kaggle/Yelp/Code/database.py",
+		"/Users/aszostek/Projects/Popvote/Code/Generate_projects.py",
+		"/Users/aszostek/Projects/Kaggle/Yelp/Code/subjective_count.py",
+		"/Users/aszostek/Projects/Fire/Code/dbf2csv.py",
+		"/Users/aszostek/Projects/Algorithms/Sort_insertion.py",
+		"/Users/aszostek/Projects/Algorithms/Sort_selection.py",
+		"/Users/aszostek/Workshops/Introduction_to_DS/Assignments/Data/datasci_course_materials/assignment3/dna.py",
+		"/Users/aszostek/Workshops/Introduction_to_DS/Assignments/Data/datasci_course_materials/assignment3/matrix.py",
+		"/Users/aszostek/Workshops/Introduction_to_DS/Assignments/Data/datasci_course_materials/assignment3/asymmetric.py",
+		"/Users/aszostek/Workshops/Introduction_to_DS/Assignments/Data/datasci_course_materials/assignment3/count_friends.py",
+		"/Users/aszostek/Workshops/Introduction_to_DS/Assignments/Data/datasci_course_materials/assignment3/Inverted_index_v1.py",
+		"/Users/aszostek/Workshops/Introduction_to_DS/Assignments/Data/datasci_course_materials/assignment3/relational_join.py",
+		"/Users/aszostek/Projects/Kaggle/Yelp/Code/train_tree.py",
+		"/Users/aszostek/Projects/Kaggle/Yelp/Code/Prepare_data.py",
+		"/Users/aszostek/Workshops/Introduction_to_DS/Assignment1_twitter/Data/datasci_course_materials/assignment1/tweet_sentiment_v2.py",
+		"/Users/aszostek/Desktop/1. scraperwiki",
+		"/Users/aszostek/Workshops/Introduction_to_DS/Assignment1_twitter/Data/datasci_course_materials/assignment1/term_sentiment_v0.py",
+		"/Users/aszostek/Workshops/Introduction_to_DS/Assignment1_twitter/Data/datasci_course_materials/assignment1/top_ten_hash.py",
+		"/Users/aszostek/Projects/d3/firstproject/index.html",
+		"/Users/aszostek/Projects/d3/firstproject/rect_interactive",
+		"/Users/aszostek/Projects/d3/book/d3-book-master/chapter_10/14_div_tooltip.html",
+		"/Users/aszostek/Projects/d3/book/d3-book-master/chapter_11/01_pie.html",
+		"/Users/aszostek/Projects/d3/book/d3-book-master/chapter_10/13_svg_tooltip.html",
+		"/Users/aszostek/Projects/d3/book/d3-book-master/chapter_10/07_sort.html",
+		"/Users/aszostek/Projects/d3/book/d3-book-master/chapter_10/03_hover.html",
+		"/Users/aszostek/Projects/d3/book/d3-book-master/chapter_10/01_start.html",
+		"/Users/aszostek/Projects/d3/firstproject/rectangle_key_join_add_remove",
+		"/Users/aszostek/Projects/d3/firstproject/scatter_plot",
+		"/Users/aszostek/Projects/d3/book/d3-book-master/chapter_09/25_adding_values.html",
+		"/Users/aszostek/Projects/d3/book/d3-book-master/chapter_09/26_removing_values.html",
+		"/Users/aszostek/Projects/d3/book/d3-book-master/chapter_09/28_adding_and_removing.html",
+		"/Users/aszostek/Projects/d3/book/d3-book-master/chapter_09/27_data_join_with_key.html",
+		"/Users/aszostek/Projects/d3/firstproject/rectangle",
+		"/Users/aszostek/Projects/d3/firstproject/rectangle_add_value",
+		"/Users/aszostek/Projects/d3/firstproject/book_axes.html",
+		"/Users/aszostek/Projects/d3/book/d3-book-master/chapter_09/24_clip-path.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"item",
+			"import",
+			"requests_",
+			"Oaut",
+			"request",
+			"hint",
+			"root",
+			"here",
+			"atlas",
+			"6",
+			"weight ",
+			"user"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"review",
+			"reviw"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/aszostek/Projects/Insight/Twitter/mysql_tests.py",
+					"settings":
+					{
+						"buffer_size": 205,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								204,
+								204
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/aszostek/Projects/Insight/Twitter/tests.py",
+					"settings":
+					{
+						"buffer_size": 2078,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2075,
+								2075
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 266.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views.py",
+					"settings":
+					{
+						"buffer_size": 652,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								540,
+								540
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/templates/index.html",
+					"settings":
+					{
+						"buffer_size": 528,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								508,
+								508
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 197.0,
+	"status_bar_visible": true
+}

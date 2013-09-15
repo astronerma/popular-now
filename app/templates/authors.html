@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1> Authors </h1>
+<p class="lead"> Tweet popularity model is based on the
+	following Twitter accounts. A Tweet is called popular when its 
+	actual or predicted number of re-tweets exceeds average number of re-tweets per tweet
+	for a given author (shown below).</p>
+
+<h3> Data science and data visualization </h3 >
+<table class="table">
+<tr>
+	<td></td>
+	<td></td>
+	<td><p class="lead">Retweets per tweet</p></td>
+</tr>
+{% for a in aD %}
+<tr>
+	<td  class="span2"><img src="{{a.image}}" class="img-circle"></td>
+	<td  class="span5">
+		<h4> {{a.name}} @{{a.screen_name}}</h4>
+		<p>{{a.description}}</p>
+	</td>
+	<td><p class="lead">{{a.retweets_per_tweet}}</p></td>
+	
+</tr>	
+{% endfor %}
+</table>
+
+<h3> Celebrities </h3 >
+<table class="table">
+<tr>
+	<td></td>
+	<td></td>
+	<td><p class="lead">Retweets per tweet</p></td>
+</tr>
+{% for a in aC %}
+<tr>
+	<td  class="span2"><img src="{{a.image}}" class="img-circle"></td>
+	<td  class="span5">
+		<h4> {{a.name}} @{{a.screen_name}}</h4>
+		<p>{{a.description}}</p>
+	</td>
+	<td><p class="lead">{{a.retweets_per_tweet}}</p></td>
+	
+</tr>	
+{% endfor %}
+</table>
+
+
+<h3> Sport </h3 >
+<table class="table">
+<tr>
+	<td></td>
+	<td></td>
+	<td><p class="lead">Retweets per tweet</p></td>
+</tr>
+{% for a in aS %}
+<tr>
+	<td  class="span2"><img src="{{a.image}}" class="img-circle"></td>
+	<td  class="span5">
+		<h4> {{a.name}} @{{a.screen_name}}</h4>
+		<p>{{a.description}}</p>
+	</td>
+	<td><p class="lead">{{a.retweets_per_tweet}}</p></td>
+	
+</tr>	
+{% endfor %}
+</table>
+
+
+{% endblock %}
+

@@ -1,0 +1,37 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h1>About the app</h1>
+<p class="lead"> Lets say you want to read only popular Tweets. But fresh Tweets do not have enough re-tweets for you to know if they are popular or not. Our model can predict popularity of a Tweet before it becomes popular.</p>
+
+<p> We measure Tweet popularity with a relative number of re-tweets. A popular Tweet is a Tweet which number of re-tweets is higher than the average number of re-tweets per tweet for a given author. Think about it this way, tweets of popular authors (those with many followers) will receive on average more re-tweets per each of their Tweet than less popular authors. An absolute number of re-tweets only tells us about a popularity of an author and not necessarily about a popularity of a Tweet itself. Therefore we think popular Tweets are Tweets that are highly popular for given author, that is collected more re-tweets that the author gets on average. </p>
+
+
+
+
+<h3> Features and feature selection </h3>
+I created a number of features describing each Tweet and its author.
+
+<h3> Things I tried </h3>
+<p> I tried two classification models, Random Forest and Naive Bayes, each of them doing independent prediction on different features of the test set. </p>
+
+<h3> Performance </h3>
+Random Forest has an AUC of 0.77, Naive Bayes has AUC 0.69 If I only use both classifications and classify a Tweet as popular only if both models predict it to be such, I get AUC 0.59.
+
+<h3>Other things to take into account</h3>
+Maybe one should make a model for each author individually to predict its important tweets based on its audience?
+Maybe one should narrow down topic.
+In Naive Bayes use less words as features? Only the most frequent words?
+Increase the training set? Or train only based on more recent tweets?
+
+<h3>To Do</h3>
+Divide it in three categories, look, model, experience
+Add social icons?
+Take into account what is at the end of the link, title of an article?
+
+
+
+{% endblock %}
