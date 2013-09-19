@@ -18,6 +18,23 @@
 
 }
 
+.badge-color{
+  font-color: #FF0000;
+  color: #6AA121;
+  align: center;
+}
+
+.badge-color2{
+  font-color: #FF0000;
+  color: #FF0000;
+  align: center;
+}
+
+.tooltips{
+  font-size: 14px;
+  align: center;
+}
+
  </style>
     <h1>{{name}}</h1>
     <div class="row">
@@ -33,22 +50,27 @@
 <div class="span8">
 {% if rt==0 %}
 <ul class="nav nav-tabs">
-  <li class="active"> <a href="/feed?topic={{topic}}"> Direct </a> </li>
+  <li class="active"> <a href="/feed?topic={{topic}}"> <i class="icon-heart-empty"></i> Direct </a> </li>
   <li ><a href="/feedRT?topic={{topic}}"><i class="icon-retweet"></i> ReTweets</a></li>
+  <li ><a href="/feedRT?topic={{topic}}"><i class="icon-heart"></i> Clean</a></li>
 </ul>
 {% else %}
 <ul class="nav nav-tabs">
   <li > <a href="/feed?topic={{topic}}">Direct</a> </li>
   <li class="active"><a href="/feedRT?topic={{topic}}"><i class="icon-retweet"></i> ReTweets</a></li>
+  <li class="active"><a href="/feedRT?topic={{topic}}"><i class="icon-heart"></i> Clean </a></li>
 </ul>
 {% endif %}
+
 
 <table class="table table-striped table-hover">
 {% for t in tweets %}
 <tr>
+
     {{t.image|safe}}
     {{t.content|safe}}
     {{t.age|safe}}
+
 </tr>
 
 
@@ -59,12 +81,15 @@
 </div>
 <div class="span4">
 
- <form class="form-signin" action="/refresh_feed" method="POST">
+ <form id='myform' class="form-signin" action="/refresh_feed" method="POST">
   <input type="hidden" name="topic" value="{{topic}}" class="span4">
-  <button class="btn btn-medium btn-inverse" type="submit"><i class="icon-repeat"></i> Refresh Feed</button>
+  <button id='push' class="btn btn-medium btn-inverse" data-loading-text="Refreshing..." ><i class="icon-repeat"></i> Refresh Feed</button>
+  
   </form>
 </div>
 </div>
+
+
 
 
 

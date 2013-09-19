@@ -4,6 +4,22 @@
 {% block content %}
 
 
+
+
+<form id="myform" class="form-signin" action="/index">
+  <button id='push' class="btn btn-medium btn-inverse" data-loading-text="Loading..." type="submit"> <i class="icon-repeat"></i> Refresh Feed </button>
+</form>
+
+
+
+
+
+
+
+
+<div class="bleble">
+</div>
+
 <h1>About the app</h1>
 <p class="lead"> Lets say you want to read only popular Tweets. But fresh Tweets do not have enough re-tweets for you to know if they are popular or not. Our model can predict popularity of a Tweet before it becomes popular.</p>
 
@@ -30,8 +46,13 @@ Increase the training set? Or train only based on more recent tweets?
 <h3>To Do</h3>
 Divide it in three categories, look, model, experience
 Add social icons?
-Take into account what is at the end of the link, title of an article?
+Take into account what is at the end of the link, title of an article? Use goose?
+Link wrapping - see what is on the other side
+model is doing very bad for celebrities and sports. could be because different authors - news outlets and celebrities themselves chosen quite on random. Another possibility is that the text is very important in other categories!
 
+
+<h3>Trouble</h3>
+Install latest version of Tweepy. Install a hack to mysql-python otherwise it doesn't unicode characters!
 
 
 {% endblock %}

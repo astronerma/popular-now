@@ -12,7 +12,6 @@ from sklearn.ensemble import RandomForestClassifier
 from nltk.corpus import stopwords
 from my_classes import Author,Tweet,Database,TwitterApi
 
-
 database = Database("twitter")
 namedict = database.get_names()
 
@@ -139,7 +138,8 @@ def feed():
 
 	# change content
 	phash = re.compile(r"(#[0-9a-zA-Z]+)")
-	phtml = re.compile(r"(http://t\.co/[0-9a-zA-Z/:]+)")
+	phttp = re.compile(r"(http://t\.co/[0-9a-zA-Z/:]+)")
+	phttps = re.compile(r"(https://t\.co/[0-9a-zA-Z/:]+)")
 	#pat = re.compile(r"@([0-9a-zA-Z]+)")
 
 
@@ -168,26 +168,58 @@ def feed():
 			age = str(int(age/24))+" d"
 
 		
-		if row['metric2'] == 1 or row['metric2'] == 2:
+		if row['metric2'] == 1:
 			# ----------------------
 			text = row['content']
-			text = phtml.sub("<i class=\"icon-hand-right\"></i><a href=\"\\1\" target=\"_blank\"> link </a>",text)
-			text = phash.sub("<span title=\"\\1\"><i class=\"icon-tag\"></i></span>",text)
+			text = phttps.sub("<i class=\"icon-hand-right\"></i><a href=\"\\1\" target=\"_blank\"> link </a>",text)
+			text = phttp.sub("<i class=\"icon-hand-right\"></i><a href=\"\\1\" target=\"_blank\"> link </a>",text)
+			#text = phash.sub("<span title=\"\\1\"><i class=\"icon-tag\"></i></span>",text)
+			
+			text = phash.sub("<i class=\"icon-tag tooltips\" data-toggle=\"tooltip\" \
+				data-html=\"true\" title=\"<h4>\\1</h4>\"></i>",text)
+
+
+
 			text = "<td><blockquote class=\"twitter-tweet\"><p>"+text+"</p>&mdash; " + row['name'] + " (@"+row['screen_name']+") </blockquote></td>"
 			image = "<td width=\"50\"><img src="+ row['image_url'] +" class=\"img-circle\"></td>"
-			age = "<td width=\"50\"><p>"+ age +"</p></td>"
+			#age = "<td width=\"50\"><p>"+ age +"</p></td>"
+			age = "<td width=\"50\"><p>"+ age + "<h4><i class=\"tooltips icon-asterisk badge-color2\" data-toggle=\"tooltip\" \
+			data-html=\"true\" title=\"<h4>Prediction</h4>\" data-placement=\"right\"></i></h4></p></td>"
+
+
+		
+		elif row['metric2'] == 2:
+			# ----------------------
+			text = row['content']
+			text = phttps.sub("<i class=\"icon-hand-right\"></i><a href=\"\\1\" target=\"_blank\"> link </a></i>",text)
+			text = phttp.sub("<i class=\"icon-hand-right\"></i><a href=\"\\1\" target=\"_blank\"> link </a></i>",text)
+			#text = phash.sub("<span title=\"\\1\"><i class=\"icon-tag\"></i></span>",text)
+			text = phash.sub("<i class=\"icon-tag tooltips\" data-toggle=\"tooltip\" \
+				data-html=\"true\" title=\"<h4>\\1</h4>\"></i>",text)
+
+			text = "<td><blockquote class=\"twitter-tweet\"><p>"+text+"</p>&mdash; " + row['name'] + " (@"+row['screen_name']+") </blockquote></td>"
+			image = "<td width=\"50\"><img src="+ row['image_url'] +" class=\"img-circle\"></td>"
+			#age = "<td width=\"50\"><p>"+ age +"<h4><i class=\"icon-asterisk badge-color\"></i></h4></p></td>"
+			age = "<td width=\"50\"><p>"+ age + "<h4><i class=\"tooltips icon-asterisk badge-color\" data-toggle=\"tooltip\" \
+			data-html=\"true\" title=\"<h4>Already popular</h4>\" data-placement=\"right\"></i></h4></p></td>"
+						
+
 		else:
 			# ----------------------
 			text = row['content']
-			text = phtml.sub("<i class=\"icon-hand-right\"> <a class=\"inactive-link\" href=\"\\1\" target=\"_blank\">  link </a>",text)
-			text = phash.sub("<span title=\"\\1\"><i class=\"icon-tag\"></i></span>",text)
+			text = phttps.sub("<i class=\"icon-hand-right\"> <a class=\"inactive-link\" href=\"\\1\" target=\"_blank\">  link </a></i>",text)
+			text = phttp.sub("<i class=\"icon-hand-right\"> <a class=\"inactive-link\" href=\"\\1\" target=\"_blank\">  link </a></i>",text)
+			#text = phash.sub("<span title=\"\\1\"><i class=\"icon-tag\"></i></span>",text)
+			text = phash.sub("<i class=\"icon-tag tooltips inactive-link\" data-toggle=\"tooltip\" \
+				data-html=\"true\" title=\"<h4>\\1</h4>\"></i>",text)
+
 			text = "<del>" + text
-			text = "<td><blockquote class=\"twitter-tweet\" style=\"color: #C0C0C0\"  ><p>"+text+"</p>&mdash; " + row['name'] + " (@"+row['screen_name']+") </blockquote></td>"
+			text = "<td><blockquote class=\"twitter-tweet\" style=\"color: #C0C0C0\"><p>"+text+"</p> " + row['name'] + " (@"+row['screen_name']+") </blockquote></td>"
 			image = "<td width=\"50\"><h1><i class=\"icon-twitter twitter-color\"></i></h1></td>"
 			age = "<td width=\"50\"><p class=\"twitter-color\">"+ age +"</p></td>"
 
 		if row['rt'] == 1.:
-			row['metric2'] == 2.
+			row['metric2'] == 1.
 
 		tweets.append({
 			"content": text,
@@ -225,7 +257,8 @@ def refresh_feed():
 	url = "/feed?topic=" + topic
 
 	# columns used in my model
-	columns = Tweet("data science").random_forest_columns()[1:]
+	#columns = Tweet("data science").random_forest_columns()[1:]
+	columns = Tweet("data science").logistic_regression_columns()[1:]
 
 	# update predicted class here
 	# Only for tweets that have metric2 = 0
@@ -280,25 +313,22 @@ def feedRT():
 		else:
 			age = str(int(age/24))+" d"
 
-		if row['metric2'] == 2:		
-			# ----------------------
-			text = row['content']
-			text = phtml.sub("<i class=\"icon-hand-right\"></i><a href=\"\\1\" target=\"_blank\"> link </a>",text)
-			text = phash.sub("<span title=\"\\1\"><i class=\"icon-tag\"></i></span>",text)
-			text = "<td><blockquote class=\"twitter-tweet\"><p>"+text+"</p>&mdash; " + row['name'] + " (@"+row['screen_name']+") </blockquote></td>"
-			image = "<td width=\"50\"><img src="+ row['image_url'] +" class=\"img-circle\"></td>"
-			age = "<td width=\"50\"><p>"+ age +"</p></td>"
+		
+		text = row['content']
+		text = phtml.sub("<i class=\"icon-hand-right\"></i><a href=\"\\1\" target=\"_blank\"> link </a>",text)
+		
+		text = phash.sub("<span title=\"\\1\"><i class=\"icon-tag\"></i></span>",text)
 
-		else:
-			# ----------------------
-			text = row['content']
-			text = phtml.sub("<i class=\"icon-hand-right\"> <a class=\"inactive-link\" href=\"\\1\" target=\"_blank\">  link </a>",text)
-			text = phash.sub("<span title=\"\\1\"><i class=\"icon-tag\"></i></span>",text)
-			text = "<del>" + text
-			text = "<td><blockquote class=\"twitter-tweet\" style=\"color: #C0C0C0\"  ><p>"+text+"</p>&mdash; " + row['name'] + " (@"+row['screen_name']+") </blockquote></td>"
-			image = "<td width=\"50\"><h1><i class=\"icon-twitter twitter-color\"></i></h1></td>"
-			age = "<td width=\"50\"><p class=\"twitter-color\">"+ age +"</p></td>"
 
+		#text = phash.sub("<a href=\"#\" data-toggle=\"tooltip\" class=\"#hashtag\"  title=\"\\1\"><i class=\"icon-tag\"></i></a>",text)
+		
+		
+
+		text = "<td><blockquote class=\"twitter-tweet\"><p>"+text+"</p>&mdash; " + row['name'] + " (@"+row['screen_name']+") </blockquote></td>"
+		image = "<td width=\"50\"><img src="+ row['image_url'] +" class=\"img-circle\"></td>"
+		age = "<td width=\"50\"><p>"+ age +"</p></td>"
+
+	
 
 		tweets.append({
 			"content": text,
@@ -331,8 +361,6 @@ def model():
 @app.route('/slides')
 def slides():
 	return render_template("slides.html")
-
-
 
 
 

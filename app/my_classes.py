@@ -177,7 +177,7 @@ class Database:
 		query = 'SELECT '
 		for c in columns:
 			query += c + ","
-		query = query[:-1] + ' FROM tweets,authors WHERE tweets.age > 4 and \
+		query = query[:-1] + ' FROM tweets,authors WHERE tweets.age > 4 and tweets.age < 365 and \
 		tweets.rt = 0 and tweets.author_id = authors.author_id and tweets.topic = '+ "\"" + topic + "\"" + ';'
 		#print query
 		self.coursor.execute(query)
@@ -285,8 +285,10 @@ class Database:
 
 		# Classifies
 		t = re.sub(" ","_",topic)
-		filename = "../models/random_forest_model_" + t +".p"
-		classifierRF = pickle.load( open( filename, "rb" ))
+		#filename = "../models/random_forest_model_" + t +".p"
+		#classifierRF = pickle.load( open( filename, "rb" ))
+		filename = "../models/logistic_regression_model_" + t +".p"
+		classifier = pickle.load( open( filename, "rb" ))
 		#filename = "app/models/naive_bayes_model_" + t +".p"
 		#classifierNB = pickle.load( open( filename, "rb" ))
 		
@@ -305,12 +307,13 @@ class Database:
 			for c in columns:
 				features.append(row[c])
 		
-			myclassRF = classifierRF.predict(features)[0]
+			#myclassRF = classifierRF.predict(features)[0]
+			myclassLR = classifier.predict(features)[0]
 			#myclassNB = classifierNB[topic].classify(prepare_content(row['content']))
 		
 
 			#if myclassRF == 1.0 and myclassRF == myclassNB:
-			if myclassRF == 1.0:
+			if myclassLR == 1.0:
 				myclass = 1.0
 			else:
 				myclass = 0.0
@@ -690,13 +693,18 @@ class Tweet:
 			"nhash","mean_word","upper2lower","max_retweets",
 			"followers","median_retweets","digits","fame","alltweets","question"]
 
-	def ligistic_regression_columns(self):
+	def logistic_regression_columns(self):
 		# These are columns used in the random forest fitting
-		return ["metric1",'words','retweets_per_tweet',"length","nlinks","nat",
+		return ["metric1",'words',"length","nlinks","nat",
 			"nhash","mean_word","upper2lower","max_retweets",
-			"followers","median_retweets","digits","day","month","year",
-			"question","hour","tweets.author_id","favorites","max_favorites",
-			"median_favorites","sum_retweets","ntweets","alltweets","friends"]
+			"followers","median_retweets","digits","day",
+			"question","max_favorites","retweets_per_tweet",
+			"median_favorites","sum_retweets","ntweets","alltweets","friends","fame"]
+
+	#def logistic_regression_columns(self):
+	#	# These are columns used in the random forest fitting
+	#	return ["metric1","length","nlinks","nat","nhash","question","mean_word"]
+
 
 
 ####################################

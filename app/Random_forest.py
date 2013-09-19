@@ -25,10 +25,10 @@ def fit_random_forest(topic,columns):
 	database = Database("twitter")
 
 	# Data for tests in R
-	t = re.sub(" ","_",topic)
-	filename = "../../Data/new_train_"+topic+".csv"
-	log_columns = Tweet("data science").ligistic_regression_columns()
-	database.save_to_csv(log_columns,topic,filename)
+	#t = re.sub(" ","_",topic)
+	#filename = "../../Data/new_train_"+topic+".csv"
+	#log_columns = Tweet("data science").ligistic_regression_columns()
+	#database.save_to_csv(log_columns,topic,filename)
 
 	# Get data from database
 	# Only data older than 4 days and only non RTs
@@ -92,6 +92,31 @@ def fit_random_forest(topic,columns):
 		print "AUC test",roc_auc
 		#print fpr,tpr
 
+		pp = classifier.predict(X_test)
+		tp = 0.
+		tn = 0.
+		fp = 0.
+		fn = 0.
+		for i in range(len(pp)):
+			#print y_test.iloc[i].values[0],pp[i]
+			#print pp[i]
+			if y_test[0] == 0.:
+				if pp[i] == 0.:
+					tn += 1
+				else:
+					fp += 1
+			else:
+				if pp[i] == 1.:
+					tp += 1
+				else:
+					fn += 1
+
+		a = len(pp)
+		print tp, fp
+		print fn, tn
+
+
+
 	should_i_plot = False
 	if should_i_plot:
 		precision, recall, thresholds = precision_recall_curve(y_test, probas_[:, 1])
@@ -117,9 +142,9 @@ def fit_random_forest(topic,columns):
 # --------------------------------
 columns = Tweet("data science").random_forest_columns()
 #print columns
-#fit_random_forest("data science",columns)
-fit_random_forest("celebrity",columns)
-fit_random_forest("sport",columns)
+fit_random_forest("data science",columns)
+#fit_random_forest("celebrity",columns)
+#fit_random_forest("sport",columns)
 
 
 

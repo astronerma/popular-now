@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Ptak</title>
+    <title>popular-now</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -51,7 +51,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="/index">Ptak</a>
+          <a class="brand" href="/index">popular-now</a>
           <div class="nav-collapse collapse">
             {% macro nav_link(endpoint, name) %}
                 {% if endpoint == request.endpoint %}
@@ -95,7 +95,7 @@
 
 <div id="footer">
       <div class="container">
-        <p class="muted credit">Copyright © 2013 Ptak by Anna Szostek.</p>
+        <p class="muted credit">Copyright © 2013 popular-now by Anna Szostek.</p>
       </div>
     </div>
 
@@ -104,6 +104,21 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
-  
+    
+    <script>
+      $('.tooltips').hover(
+        function() { $(this).tooltip('show'); },
+        function() { $(this).tooltip('hide'); }
+        )
+      
+
+      
+    $('#myform').submit( function() { 
+      $('#push').button('loading')     
+    } )
+    
+    </script>
+
+
   </body>
 </html>

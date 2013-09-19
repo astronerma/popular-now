@@ -139,9 +139,9 @@ if __name__ == "__main__":
 
 
 	# Run these only at the end, once you have all tweets
-	#download_authors("data science")
-	#download_authors("sport")
-	#download_authors("celebrity")
+	download_authors("data science")
+	download_authors("sport")
+	download_authors("celebrity")
 	
 	# !!!!!!!!!!!!!!!!!!!
 	# If tweets don't refresh, run this!!!!!!
