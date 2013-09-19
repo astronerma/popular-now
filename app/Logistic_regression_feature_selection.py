@@ -68,7 +68,7 @@ def fit_logistic_regression(topic,columns):
 
 
 	all_columns = X.columns
-	best_columns = ['nlinks','nat','length','nhash','mean_word']
+	best_columns = ['nat','words','nlinks','length','question']
 	#all_columns.remove('nlinks0')
 	#all_columns.remove('nat0')
 
@@ -98,6 +98,24 @@ def fit_logistic_regression(topic,columns):
 
 	print "Best:", max_feature, max_auc
 
+
+	#best_columns = ['words',"length","nlinks","nat",
+	#		"nhash","mean_word","upper2lower","max_retweets",
+	#		"followers","median_retweets","digits","day",
+	#		"question","max_favorites","retweets_per_tweet",
+	#		"median_favorites","sum_retweets","ntweets","alltweets","friends","fame"]
+	
+	fX_train = X_train[best_columns]
+	fX_valid = X_valid[best_columns]
+	classifier = linear_model.LogisticRegression(C=1e5)
+	classifier.fit(fX_train, y_train)
+
+	coef = classifier.coef_
+	for i in range(len(coef[0])):
+		#if abs(coef[0][i]) > 0.05: 
+		print i,best_columns[i],coef[0][i]
+
+
 		#print pp
 		#print y_test.head()
 		
@@ -106,9 +124,9 @@ def fit_logistic_regression(topic,columns):
 # --------------------------------
 columns = Tweet("data science").logistic_regression_columns()
 #print columns
-fit_logistic_regression("data science",columns)
+#fit_logistic_regression("data science",columns)
 #fit_logistic_regression("celebrity",columns)
-#fit_logistic_regression("sport",columns)
+fit_logistic_regression("sport",columns)
 
 
 

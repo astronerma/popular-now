@@ -4,28 +4,10 @@
 {% block content %}
 
 
-
-
-<form id="myform" class="form-signin" action="/index">
-  <button id='push' class="btn btn-medium btn-inverse" data-loading-text="Loading..." type="submit"> <i class="icon-repeat"></i> Refresh Feed </button>
-</form>
-
-
-
-
-
-
-
-
-<div class="bleble">
-</div>
-
 <h1>About the app</h1>
-<p class="lead"> Lets say you want to read only popular Tweets. But fresh Tweets do not have enough re-tweets for you to know if they are popular or not. Our model can predict popularity of a Tweet before it becomes popular.</p>
+<p class="lead"> Do you look for great content on Twitter? Are you sometimes completely overwhelmed by the amount of Tweets, and you ask yourself: Do I need to read all of these Tweets? Do I need to click all of these links? Do I care about all the #s, @s, RTs? Should I even read the Tweet or is it a part of a conversation? If you do, then popular-now is for you! </p>
 
 <p> We measure Tweet popularity with a relative number of re-tweets. A popular Tweet is a Tweet which number of re-tweets is higher than the average number of re-tweets per tweet for a given author. Think about it this way, tweets of popular authors (those with many followers) will receive on average more re-tweets per each of their Tweet than less popular authors. An absolute number of re-tweets only tells us about a popularity of an author and not necessarily about a popularity of a Tweet itself. Therefore we think popular Tweets are Tweets that are highly popular for given author, that is collected more re-tweets that the author gets on average. </p>
-
-
 
 
 <h3> Features and feature selection </h3>
@@ -48,7 +30,14 @@ Divide it in three categories, look, model, experience
 Add social icons?
 Take into account what is at the end of the link, title of an article? Use goose?
 Link wrapping - see what is on the other side
-model is doing very bad for celebrities and sports. could be because different authors - news outlets and celebrities themselves chosen quite on random. Another possibility is that the text is very important in other categories!
+model is doing very bad for celebrities and sports. could be because different authors - news outlets and celebrities themselves chosen quite on random. Another possibility is that the text is very important in other categories! 
+One more thing to add is trend words/#tags if they appear in text.
+Build a model for favorite tweets, different than the re-tweeted
+Past research on that
+What is new - topic selection and popularity definition
+look at target of links
+look at source of tweet
+look at hash tag trends in recent tweets
 
 
 <h3>Trouble</h3>

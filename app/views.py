@@ -132,6 +132,7 @@ def author_name(match):
 # Here I will also filter tweets!
 def feed():
 	topic = request.args['topic']
+	tab = request.args['tab']
 	#print topic
 	database = Database("twitter")
 	database.change_cursor()
@@ -144,7 +145,7 @@ def feed():
 
 
 	# Download data from database
-	q = "SELECT * FROM new,authors WHERE new.rt = 0 and new.author_id = authors.author_id and \
+	q = "SELECT * FROM new,authors WHERE new.author_id = authors.author_id and \
 		new.topic= " + "\"" + topic + "\"" + " ORDER BY date DESC;"
 	#print q
 	all_tweets = database.query(q)
@@ -167,72 +168,84 @@ def feed():
 		else:
 			age = str(int(age/24))+" d"
 
-		
-		if row['metric2'] == 1:
-			# ----------------------
-			text = row['content']
-			text = phttps.sub("<i class=\"icon-hand-right\"></i><a href=\"\\1\" target=\"_blank\"> link </a>",text)
-			text = phttp.sub("<i class=\"icon-hand-right\"></i><a href=\"\\1\" target=\"_blank\"> link </a>",text)
-			#text = phash.sub("<span title=\"\\1\"><i class=\"icon-tag\"></i></span>",text)
-			
-			text = phash.sub("<i class=\"icon-tag tooltips\" data-toggle=\"tooltip\" \
-				data-html=\"true\" title=\"<h4>\\1</h4>\"></i>",text)
+		if tab == "rt":
+			if row['rt'] == 1:
+				text = row['content']
+				text = phttps.sub("<i class=\"icon-hand-right\"></i><a href=\"\\1\" target=\"_blank\"> link </a>",text)
+				text = phttp.sub("<i class=\"icon-hand-right\"></i><a href=\"\\1\" target=\"_blank\"> link </a>",text)
+				#text = phash.sub("<span title=\"\\1\"><i class=\"icon-tag\"></i></span>",text)
+				text = phash.sub("<i class=\"icon-tag tooltips\" data-toggle=\"tooltip\" \
+					data-html=\"true\" title=\"<h4>\\1</h4>\"></i>",text)
 
+				text = "<td><blockquote class=\"twitter-tweet\"><p>"+text+"</p>&mdash; " + row['name'] + " (@"+row['screen_name']+") </blockquote></td>"
+				image = "<td width=\"50\"><img src="+ row['image_url'] +" class=\"img-circle\"></td>"
+				age = "<td width=\"50\"><p>"+ age +"</p></td>"
+				
+				tweets.append({
+					"content": text,
+					"name": row["name"],
+					"retweets": row["retweets"],
+					"screen_name":row["screen_name"],
+					"id":row["id"],
+					"age":age,
+					"myclass":row["metric2"],
+					"image":image,
+					})
 
+		elif tab == "clean" or tab == "all":
+			if row['metric2'] == 1 or row['metric2'] == 2 and row['rt'] == 0:
+				text = row['content']
+				text = phttps.sub("<i class=\"icon-hand-right\"></i><a href=\"\\1\" target=\"_blank\"> link </a>",text)
+				text = phttp.sub("<i class=\"icon-hand-right\"></i><a href=\"\\1\" target=\"_blank\"> link </a>",text)			
+				text = phash.sub("<i class=\"icon-tag tooltips\" data-toggle=\"tooltip\" \
+					data-html=\"true\" title=\"<h4>\\1</h4>\"></i>",text)
 
-			text = "<td><blockquote class=\"twitter-tweet\"><p>"+text+"</p>&mdash; " + row['name'] + " (@"+row['screen_name']+") </blockquote></td>"
-			image = "<td width=\"50\"><img src="+ row['image_url'] +" class=\"img-circle\"></td>"
-			#age = "<td width=\"50\"><p>"+ age +"</p></td>"
-			age = "<td width=\"50\"><p>"+ age + "<h4><i class=\"tooltips icon-asterisk badge-color2\" data-toggle=\"tooltip\" \
-			data-html=\"true\" title=\"<h4>Prediction</h4>\" data-placement=\"right\"></i></h4></p></td>"
+				text = "<td><blockquote class=\"twitter-tweet\"><p>"+text+"</p>&mdash; " + row['name'] + " (@"+row['screen_name']+") </blockquote></td>"
+				image = "<td width=\"50\"><img src="+ row['image_url'] +" class=\"img-circle\"></td>"
+				
+				if row['metric2'] == 1:
+					age = "<td width=\"50\"><p>"+ age + "<h4><i class=\"tooltips icon-asterisk badge-color2\" data-toggle=\"tooltip\" \
+						data-html=\"true\" title=\"<h4>Prediction</h4>\" data-placement=\"right\"></i></h4></p></td>"
+				else:
+					age = "<td width=\"50\"><p>"+ age + "<h4><i class=\"tooltips icon-asterisk badge-color\" data-toggle=\"tooltip\" \
+						data-html=\"true\" title=\"<h4>Already popular</h4>\" data-placement=\"right\"></i></h4></p></td>"
+				
+				tweets.append({
+					"content": text,
+					"name": row["name"],
+					"retweets": row["retweets"],
+					"screen_name":row["screen_name"],
+					"id":row["id"],
+					"age":age,
+					"myclass":row["metric2"],
+					"image":image,
+					})
 
+			elif tab == "all" and row['metric2'] == 0 and row['rt'] == 0:
+				text = row['content']
+				text = phttps.sub("<i class=\"icon-hand-right\"> <a class=\"inactive-link\" href=\"\\1\" target=\"_blank\">  link </a></i>",text)
+				text = phttp.sub("<i class=\"icon-hand-right\"> <a class=\"inactive-link\" href=\"\\1\" target=\"_blank\">  link </a></i>",text)
+				text = phash.sub("<i class=\"icon-tag tooltips inactive-link\" data-toggle=\"tooltip\" \
+					data-html=\"true\" title=\"<h4>\\1</h4>\"></i>",text)
 
-		
-		elif row['metric2'] == 2:
-			# ----------------------
-			text = row['content']
-			text = phttps.sub("<i class=\"icon-hand-right\"></i><a href=\"\\1\" target=\"_blank\"> link </a></i>",text)
-			text = phttp.sub("<i class=\"icon-hand-right\"></i><a href=\"\\1\" target=\"_blank\"> link </a></i>",text)
-			#text = phash.sub("<span title=\"\\1\"><i class=\"icon-tag\"></i></span>",text)
-			text = phash.sub("<i class=\"icon-tag tooltips\" data-toggle=\"tooltip\" \
-				data-html=\"true\" title=\"<h4>\\1</h4>\"></i>",text)
+				text = "<del>" + text
+				text = "<td><blockquote class=\"twitter-tweet\" style=\"color: #C0C0C0\"><p>"+text+"</p> " + row['name'] + " (@"+row['screen_name']+") </blockquote></td>"
+				image = "<td width=\"50\"><h1><i class=\"icon-twitter twitter-color\"></i></h1></td>"
+				age = "<td width=\"50\"><p class=\"twitter-color\">"+ age +"</p></td>"
 
-			text = "<td><blockquote class=\"twitter-tweet\"><p>"+text+"</p>&mdash; " + row['name'] + " (@"+row['screen_name']+") </blockquote></td>"
-			image = "<td width=\"50\"><img src="+ row['image_url'] +" class=\"img-circle\"></td>"
-			#age = "<td width=\"50\"><p>"+ age +"<h4><i class=\"icon-asterisk badge-color\"></i></h4></p></td>"
-			age = "<td width=\"50\"><p>"+ age + "<h4><i class=\"tooltips icon-asterisk badge-color\" data-toggle=\"tooltip\" \
-			data-html=\"true\" title=\"<h4>Already popular</h4>\" data-placement=\"right\"></i></h4></p></td>"
-						
-
-		else:
-			# ----------------------
-			text = row['content']
-			text = phttps.sub("<i class=\"icon-hand-right\"> <a class=\"inactive-link\" href=\"\\1\" target=\"_blank\">  link </a></i>",text)
-			text = phttp.sub("<i class=\"icon-hand-right\"> <a class=\"inactive-link\" href=\"\\1\" target=\"_blank\">  link </a></i>",text)
-			#text = phash.sub("<span title=\"\\1\"><i class=\"icon-tag\"></i></span>",text)
-			text = phash.sub("<i class=\"icon-tag tooltips inactive-link\" data-toggle=\"tooltip\" \
-				data-html=\"true\" title=\"<h4>\\1</h4>\"></i>",text)
-
-			text = "<del>" + text
-			text = "<td><blockquote class=\"twitter-tweet\" style=\"color: #C0C0C0\"><p>"+text+"</p> " + row['name'] + " (@"+row['screen_name']+") </blockquote></td>"
-			image = "<td width=\"50\"><h1><i class=\"icon-twitter twitter-color\"></i></h1></td>"
-			age = "<td width=\"50\"><p class=\"twitter-color\">"+ age +"</p></td>"
-
-		if row['rt'] == 1.:
-			row['metric2'] == 1.
-
-		tweets.append({
-			"content": text,
-			"name": row["name"],
-			"retweets": row["retweets"],
-			"screen_name":row["screen_name"],
-			"id":row["id"],
-			"age":age,
-			"myclass":row["metric2"],
-			"image":image,
-			
-			})
+				tweets.append({
+				"content": text,
+				"name": row["name"],
+				"retweets": row["retweets"],
+				"screen_name":row["screen_name"],
+				"id":row["id"],
+				"age":age,
+				"myclass":row["metric2"],
+				"image":image,
+				})
 	
+
+
 	#print tweets
 	if topic == "data science":
 		name = "Data science and data visualization"
@@ -242,20 +255,21 @@ def feed():
 		name = "Sports news"
 	
 	database.close_connection()
-	return render_template("feed.html",tweets=tweets,topic=topic,rt=0,name=name)
+	#topic = re.sub(" ","%20",topic)
+	return render_template("feed.html",tweets=tweets,topic=topic,name=name,tab=tab)
 
 
 
-@app.route('/refresh_feed',methods=['POST'])
+@app.route('/refresh_feed',methods=['GET'])
 def refresh_feed():
-	topic = request.form['topic']
-	#print "i am here",topic
+	topic = request.args['topic']
+	tab = request.args['tab']
 	database = Database("twitter")
-	#database.show()
+
 	database.get_latest_tweets(topic,100)
 	database.delete_older_tweets(24)
-	url = "/feed?topic=" + topic
-
+	url = "/feed?topic=" + topic + "&tab="+tab
+	print url
 	# columns used in my model
 	#columns = Tweet("data science").random_forest_columns()[1:]
 	columns = Tweet("data science").logistic_regression_columns()[1:]
@@ -267,8 +281,6 @@ def refresh_feed():
 	#database.update_all_tweets_in_new_table()
 	database.close_connection()
 	
-
-
 
 	return redirect(url)
 	#return render_template("refresh_feed.html",topic=topic)

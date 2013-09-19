@@ -308,15 +308,11 @@ class Database:
 				features.append(row[c])
 		
 			#myclassRF = classifierRF.predict(features)[0]
-			myclassLR = classifier.predict(features)[0]
-			#myclassNB = classifierNB[topic].classify(prepare_content(row['content']))
-		
-
-			#if myclassRF == 1.0 and myclassRF == myclassNB:
-			if myclassLR == 1.0:
+			if classifier.predict_proba(features)[0][1] > 0.3:
 				myclass = 1.0
 			else:
 				myclass = 0.0
+
 
 			if row["retweets"] > row["retweets_per_tweet"]+1:
 				myclass = 2.0
@@ -701,9 +697,22 @@ class Tweet:
 			"question","max_favorites","retweets_per_tweet",
 			"median_favorites","sum_retweets","ntweets","alltweets","friends","fame"]
 
-	#def logistic_regression_columns(self):
+	def logistic_regression_columns_ds(self):
+		# These are columns used in the random forest fitting
+		return ["metric1",'words',"length","nlinks","nat",
+			"nhash","mean_word","upper2lower","max_retweets",
+			"followers","median_retweets","digits","day",
+			"question","max_favorites","retweets_per_tweet",
+			"median_favorites","sum_retweets","ntweets","alltweets","friends","fame"]
+
+	def logistic_regression_columns_c(self):
+		# These are columns used in the random forest fitting
+		return ["metric1",'nat','retweets_per_tweet','fame','question']
+
+
+	def logistic_regression_columns_s(self):
 	#	# These are columns used in the random forest fitting
-	#	return ["metric1","length","nlinks","nat","nhash","question","mean_word"]
+		return ["metric1",'nat','words','nlinks','length','question']
 
 
 

@@ -147,7 +147,7 @@ def fit_logistic_regression(topic,columns):
 
 		# --------------
 		print "----------------"
-		threshold = 0.45
+		threshold = 0.3
 		print "Using a threshold",threshold
 		probas = classifier.predict_proba(X_test)
 
@@ -231,9 +231,9 @@ def fit_logistic_regression(topic,columns):
 		pl.plot([0, 1], [0, 1], 'k--')
 		pl.xlim([0.0, 1.0])
 		pl.ylim([0.0, 1.0])
-		pl.xlabel('False Positive Rate')
-		pl.ylabel('True Positive Rate')
-		pl.title('Receiver operating characteristic example')
+		pl.xlabel('False Positive Rate',fontsize=20)
+		pl.ylabel('True Positive Rate',fontsize=20)
+		pl.title('Receiver operating characteristic',fontsize=20)
 		pl.legend(loc="lower right")
 		pl.show()
 
@@ -244,11 +244,14 @@ def fit_logistic_regression(topic,columns):
 	#def classify_tweet(columns)
 
 # --------------------------------
-columns = Tweet("data science").logistic_regression_columns()
+columns_ds = Tweet("data science").logistic_regression_columns_ds()
+columns_c = Tweet("data science").logistic_regression_columns_c()
+columns_s = Tweet("data science").logistic_regression_columns_s()
+
 #print columns
-#fit_logistic_regression("data science",columns)
-#fit_logistic_regression("celebrity",columns)
-fit_logistic_regression("sport",columns)
+#fit_logistic_regression("data science",columns_ds)
+#fit_logistic_regression("celebrity",columns_c)
+fit_logistic_regression("sport",columns_s)
 
 
 
