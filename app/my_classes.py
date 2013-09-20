@@ -270,6 +270,16 @@ class Database:
 
 	def update_class_in_new_table(self,columns,topic):
 		global classifierRF, classifierNB
+		
+		if topic == "data science":
+			columns = Tweet("data science").logistic_regression_columns_ds()[1:]
+		elif topic == "celebrity":
+			columns = Tweet("data science").logistic_regression_columns_c()[1:]
+		elif topic == "sport":
+			columns = Tweet("data science").logistic_regression_columns_s()[1:]
+
+
+
 		def prepare_content(content):
 			stop = stopwords.words('english')
 			text = content
