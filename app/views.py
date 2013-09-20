@@ -154,6 +154,7 @@ def feed():
 	# time now
 	t0 = time.time()
 	timezone_offset = 7.*3600.
+	#timezone_offset = 0.*3600.
 	
 	tweets = []
 	for row in all_tweets:	

@@ -318,7 +318,7 @@ class Database:
 				features.append(row[c])
 		
 			#myclassRF = classifierRF.predict(features)[0]
-			if classifier.predict_proba(features)[0][1] > 0.3:
+			if classifier.predict_proba(features)[0][1] > 0.4:
 				myclass = 1.0
 			else:
 				myclass = 0.0
@@ -704,7 +704,7 @@ class Tweet:
 		return ["metric1",'words',"length","nlinks","nat",
 			"nhash","mean_word","upper2lower","max_retweets",
 			"followers","median_retweets","digits","day",
-			"question","max_favorites","retweets_per_tweet",
+			"question","max_favorites",
 			"median_favorites","sum_retweets","ntweets","alltweets","friends","fame"]
 
 	def logistic_regression_columns_ds(self):

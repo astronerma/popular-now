@@ -68,7 +68,7 @@ def fit_logistic_regression(topic,columns):
 
 
 	all_columns = X.columns
-	best_columns = ['nat','words','nlinks','length','question']
+	best_columns = ['nat']
 	#all_columns.remove('nlinks0')
 	#all_columns.remove('nat0')
 
@@ -125,8 +125,8 @@ def fit_logistic_regression(topic,columns):
 columns = Tweet("data science").logistic_regression_columns()
 #print columns
 #fit_logistic_regression("data science",columns)
-#fit_logistic_regression("celebrity",columns)
-fit_logistic_regression("sport",columns)
+fit_logistic_regression("celebrity",columns)
+#fit_logistic_regression("sport",columns)
 
 
 
