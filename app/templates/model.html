@@ -2,46 +2,78 @@
 {% extends "base.html" %}
 
 {% block content %}
+<style>
+
+.badge-color{
+  font-color: #FF0000;
+  color: #6AA121;
+  align: center;
+}
+
+.badge-color2{
+  font-color: #FF0000;
+  color: #FF0000;
+  align: center;
+}
+
+</style>
 
 
-<h1>About the app</h1>
-<p class="lead"> Do you look for great content on Twitter? Are you sometimes completely overwhelmed by the amount of Tweets, and you ask yourself: Do I need to read all of these Tweets? Do I need to click all of these links? Do I care about all the #s, @s, RTs? Should I even read the Tweet or is it a part of a conversation? If you do, then popular-now is for you! </p>
 
-<p> We measure Tweet popularity with a relative number of re-tweets. A popular Tweet is a Tweet which number of re-tweets is higher than the average number of re-tweets per tweet for a given author. Think about it this way, tweets of popular authors (those with many followers) will receive on average more re-tweets per each of their Tweet than less popular authors. An absolute number of re-tweets only tells us about a popularity of an author and not necessarily about a popularity of a Tweet itself. Therefore we think popular Tweets are Tweets that are highly popular for given author, that is collected more re-tweets that the author gets on average. </p>
+<div class="row">
+<div class="span8">
+<h1>About popular-now</h1>
+<p class="lead"> The app helps you read only popular Tweets by predicting popularity of new Tweets. </p>
 
+<p> Tweets are grouped into three topics Data Science and Visualization, Celebrities and Sport. Content in each topic comes from a curated list of authors. Full list of authors is <a href="/authors">here</a>. Each feed shows only Tweets from last 24 hours divided among three categories.</p>
 
-<h3> Features and feature selection </h3>
-I created a number of features describing each Tweet and its author.
-
-<h3> Things I tried </h3>
-<p> I tried two classification models, Random Forest and Naive Bayes, each of them doing independent prediction on different features of the test set. </p>
-
-<h3> Performance </h3>
-Random Forest has an AUC of 0.77, Naive Bayes has AUC 0.69 If I only use both classifications and classify a Tweet as popular only if both models predict it to be such, I get AUC 0.59.
-
-<h3>Other things to take into account</h3>
-Maybe one should make a model for each author individually to predict its important tweets based on its audience?
-Maybe one should narrow down topic.
-In Naive Bayes use less words as features? Only the most frequent words?
-Increase the training set? Or train only based on more recent tweets?
-
-<h3>To Do</h3>
-Divide it in three categories, look, model, experience
-Add social icons?
-Take into account what is at the end of the link, title of an article? Use goose?
-Link wrapping - see what is on the other side
-model is doing very bad for celebrities and sports. could be because different authors - news outlets and celebrities themselves chosen quite on random. Another possibility is that the text is very important in other categories! 
-One more thing to add is trend words/#tags if they appear in text.
-Build a model for favorite tweets, different than the re-tweeted
-Past research on that
-What is new - topic selection and popularity definition
-look at target of links
-look at source of tweet
-look at hash tag trends in recent tweets
+<ul class="nav nav-tabs">
+  <li class="active"> <a href="#"><i class="icon-star"></i> Popular </a></li>
+  <li > <a href="#"> <i class="icon-star-half-empty"></i> All </a> </li>
+  <li > <a href="#"><i class="icon-retweet"></i> ReTweets</a></li>
+</ul>
 
 
-<h3>Trouble</h3>
-Install latest version of Tweepy. Install a hack to mysql-python otherwise it doesn't unicode characters!
+
+<ul>
+	<li> <strong>Popular</strong> contains only Tweets which are predicted to become popular or were already popular at the moment of refresh. </li>
+	<li> <strong>All</strong> contains all Tweets from Popular tab and Tweets which are predicted not to become popular. The unpopular Tweets are stroked-through. </li>
+	<li> <strong>ReTweets</strong> contains Tweets, marked as RT in original text of a Tweet which means they were written by authors from outside of the curated list.</li>
+</ul>
+
+
+<p> At any moment, one can refresh the feed. With a push of a <strong>Refresh Feed</strong> button, the app connects with Twitter and download latest Tweets. Each new Tweet is scored and its future popularity status is predicted. There are two types of Tweets which show up in Popular and All tabs:
+<ul>
+	<li> <i class="icon-asterisk badge-color2"></i> Tweets predicted to become popular with time.</li>
+	<li> <i class="icon-asterisk badge-color"></i> Tweets which at the moment of Feed refresh are already popular.</li>
+</ul>	
+
+
+
+<h4> How is popularity defined? </h4>
+<p> We define a popular Tweet on a per author basis. For each author contributing to a given topic, we calculate an average number of re-tweets per Tweet they received in the past. The number is shown in the <a href="/authors"> Authors tab</a>. For example, Nate Silver on average collects 123.6 re-tweets per Tweet. We classify his Tweets as popular, each time number of re-tweets exceeds the average. For example, a Tweet below with 222 re-Tweets would be classified as popular, and a Tweet with 118 re-tweets as not popular. With a popularity threshold relative to author's "fame" we are avoiding a case where our feed is overwhelmed by Tweets written by popular authors. </p>
+
+<div class="row">
+<div class="span4">
+<p class="lead">Popular<p>
+<blockquote class="twitter-tweet"><p>Search API will now always return "real" Twitter user IDs. The with_twitter_user_id parameter is no longer necessary. An era has ended. ^TS</p>&mdash; Twitter API (@twitterapi) <a href="https://twitter.com/twitterapi/status/378238594466332672" data-datetime="2011-11-07T20:21:07+00:00">November 7, 2011</a></blockquote>
+<script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+
+<div class="span4">
+<p class="lead">Not popular<p>
+<blockquote class="twitter-tweet"><p>Search API will now always return "real" Twitter user IDs. The with_twitter_user_id parameter is no longer necessary. An era has ended. ^TS</p>&mdash; Twitter API (@twitterapi) <a href="https://twitter.com/twitterapi/status/327543243724177408" data-datetime="2011-11-07T20:21:07+00:00">November 7, 2011</a></blockquote>
+<script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+</div>
+
+
+<h4> Popularity prediction </h4>
+
+<p>Behind the scenes sits a logistic regression classifier, built for each topic separately, and trained and validated on Tweets older than 4 days and younger than 1 year. Each Tweet and its author were characterized by about two dozens features related to the Tweet text (for example number of characters, number of words, mean length of a word, number of links, #hashtags, @references, digits, day, month, hour of publication and others) or its author (for example number of followers, number of friends, number of tweets, mean/max/median number of re-tweets, ratio or followers to friends and others). We found that Tweet popularity can be predicted with only 4-5 features per topic. Interestingly popularity in each topic is predicted by a different set of features which must reflect differences in audience and their needs.</p>
+
+</div>
+</div>
 
 
 {% endblock %}
