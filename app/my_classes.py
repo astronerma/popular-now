@@ -221,7 +221,7 @@ class Database:
 		
 	def delete_older_tweets(self,hours):
 
-		query = "DELETE FROM new WHERE hour(TimeDiff(now(),date)) > " + str(hours-7) + ";"
+		query = "DELETE FROM new WHERE hour(TimeDiff(now(),date)) > " + str(hours) + ";"
 		print query 
 		self.coursor.execute(query)
 

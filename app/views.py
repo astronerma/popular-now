@@ -267,7 +267,7 @@ def refresh_feed():
 	tab = request.args['tab']
 	database = Database("twitter")
 
-	database.get_latest_tweets(topic,100)
+	database.get_latest_tweets(topic,200)
 	database.delete_older_tweets(24)
 	url = "/feed?topic=" + topic + "&tab="+tab
 	print url
