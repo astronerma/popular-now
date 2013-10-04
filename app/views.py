@@ -156,6 +156,8 @@ def feed():
 	#timezone_offset = 7.*3600.
 	timezone_offset = 0.*3600.
 	
+	#print all_tweets[0]
+
 	tweets = []
 	for row in all_tweets:	
 		# time of the tweet
@@ -194,7 +196,7 @@ def feed():
 					})
 
 		elif tab == "clean" or tab == "all":
-			if row['metric2'] == 1 or row['metric2'] == 2 and row['rt'] == 0:
+			if (row['metric2'] == 1 or row['metric2'] == 2) and row['rt'] == 0:
 				text = row['content']
 				text = phttps.sub("<i class=\"icon-hand-right\"></i><a href=\"\\1\" target=\"_blank\"> link </a>",text)
 				text = phttp.sub("<i class=\"icon-hand-right\"></i><a href=\"\\1\" target=\"_blank\"> link </a>",text)			
