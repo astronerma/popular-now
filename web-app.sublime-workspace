@@ -68,26 +68,42 @@
 	"buffers":
 	[
 		{
-			"file": "/Users/aszostek/Projects/Insight/Twitter/mysql_tests.py",
-			"settings":
-			{
-				"buffer_size": 205,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/aszostek/Projects/Insight/Twitter/tests.py",
-			"settings":
-			{
-				"buffer_size": 2078,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "app/views.py",
 			"settings":
 			{
-				"buffer_size": 652,
+				"buffer_size": 11152,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/templates/feed.html",
+			"settings":
+			{
+				"buffer_size": 2281,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Logistic_regression_feature_selection.py",
+			"settings":
+			{
+				"buffer_size": 3722,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Logistic_regression.py",
+			"settings":
+			{
+				"buffer_size": 6171,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/templates/model.html",
+			"settings":
+			{
+				"buffer_size": 4615,
 				"line_ending": "Unix"
 			}
 		},
@@ -95,7 +111,23 @@
 			"file": "app/templates/index.html",
 			"settings":
 			{
-				"buffer_size": 528,
+				"buffer_size": 4226,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/templates/base.html",
+			"settings":
+			{
+				"buffer_size": 4165,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/templates/authors.html",
+			"settings":
+			{
+				"buffer_size": 1559,
 				"line_ending": "Unix"
 			}
 		}
@@ -124,18 +156,59 @@
 	},
 	"file_history":
 	[
-		"/Users/aszostek/Projects/Insight/Twitter/naive_bayes.py",
-		"/Users/aszostek/Projects/Insight/Twitter/extract_data.py",
-		"/Users/aszostek/Projects/Insight/Twitter/naive_bayes_v2.py",
+		"/Users/aszostek/Projects/Insight/Web/app/my_classes.py",
+		"/Users/aszostek/Projects/Insight/Web/app/Random_forest.py",
+		"/Users/aszostek/Projects/Insight/Database/authors.db",
+		"/Users/aszostek/Projects/Insight/Web/run.py",
+		"/Users/aszostek/Projects/Insight/Web/app/templates/base.html",
+		"/Users/aszostek/Projects/Insight/Web/app/templates/index.html",
+		"/Users/aszostek/Projects/Insight/Web/app/templates/model.html",
+		"/Users/aszostek/Projects/Insight/Web/app/Data_preparation.py",
+		"/Users/aszostek/Projects/Insight/Web/app/Naive_Bayes.py",
+		"/Users/aszostek/Projects/Insight/Web/app/templates/authors.html",
+		"/Users/aszostek/Projects/Insight/Web/app/templates/tests.html",
+		"/Users/aszostek/Projects/Insight/Web/app/templates/slides.html",
+		"/Users/aszostek/Projects/Insight/Web/app/templates/feed.html",
+		"/Users/aszostek/Projects/Insight/Web/app/Step1_get_archival_tweets.py",
+		"/Users/aszostek/Projects/Insight/Web/app/combined_predictive_models.py",
+		"/Users/aszostek/Projects/Insight/Web/app/database_class.py",
+		"/Users/aszostek/Projects/Insight/Web/app/twitter_api.py",
+		"/Users/aszostek/Projects/Insight/Web/app/author_class.py",
+		"/Users/aszostek/Projects/Insight/Web/app/tweet_class.py",
 		"/Users/aszostek/Projects/Insight/Twitter/naive_bayes_v3.py",
+		"/Users/aszostek/Projects/Insight/Web/app/movies.py",
+		"/Users/aszostek/Projects/Insight/Web/app/templates/new_form.html",
+		"/Users/aszostek/Projects/Insight/Code/create_new_tweets_database.py",
+		"/Users/aszostek/Projects/Insight/Web/app/templates/refresh_feed.html",
+		"/Users/aszostek/Projects/Insight/Web/app/random_forest_class.py",
+		"/Users/aszostek/Projects/Insight/Code/feature_creation.py",
+		"/Users/aszostek/Projects/Insight/Code/get_twitter_data.py",
+		"/Users/aszostek/Projects/Insight/Web/app/twitter_api_original.py",
+		"/Users/aszostek/Projects/Insight/Code/Random_forest.py",
+		"/Users/aszostek/Projects/Insight/Web/app/templates/friends.html",
+		"/Users/aszostek/Projects/Insight/Code/twitter_api.py",
+		"/Users/aszostek/Projects/Insight/Web/app/templates/checkboxes.html",
+		"/Users/aszostek/Projects/Insight/Twitter/tweet_class.py",
+		"/Users/aszostek/Projects/Insight/Code/download_lates_tweets.py",
+		"/Users/aszostek/Projects/Insight/Twitter/mysql_tests.py",
+		"/Users/aszostek/Projects/Insight/Twitter/extract_data.py",
+		"/Users/aszostek/Projects/Insight/Web/app/templates/base3.html",
 		"/Users/aszostek/Projects/Insight/Twitter/tests.py",
+		"/Users/aszostek/Projects/Insight/Web/app/views.py",
+		"/Users/aszostek/Projects/Insight/Web/app/templates/result_form.html",
+		"/Users/aszostek/Projects/Insight/Web/app/templates/base_2.html",
+		"/Users/aszostek/Projects/Insight/Web/app/forms.py",
+		"/Users/aszostek/Projects/Insight/Web/app/__init__.py",
+		"/Users/aszostek/Projects/Insight/Web/config.py",
+		"/Users/aszostek/Projects/Insight/Web/app/templates/formularz.html",
+		"/Users/aszostek/Projects/Insight/Twitter/naive_bayes.py",
+		"/Users/aszostek/Projects/Insight/Twitter/naive_bayes_v2.py",
 		"/Users/aszostek/Projects/Insight/Twitter/prepare_slownik.py",
 		"/Users/aszostek/Projects/Insight/Twitter/new_features_v2.py",
 		"/Users/aszostek/Projects/Insight/Twitter/web_setup_notes.txt",
 		"/Users/aszostek/Projects/Insight/Twitter/sql_to_cvs.py",
 		"/Users/aszostek/Projects/Insight/Twitter/incoming_database.py",
 		"/Users/aszostek/Projects/Insight/Twitter/latest_tweets.py",
-		"/Users/aszostek/Projects/Insight/Twitter/tweet_class.py",
 		"/Users/aszostek/Projects/Kaggle/Yelp/Code/read_database.py",
 		"/Users/aszostek/Projects/Kaggle/Amazon/Code/data_graph_resources.py",
 		"/Users/aszostek/Projects/Insight/Twitter/get_last_200.py",
@@ -210,37 +283,7 @@
 		"/Users/aszostek/Projects/Kaggle/Yelp/Code/subjective_count.py",
 		"/Users/aszostek/Projects/Fire/Code/dbf2csv.py",
 		"/Users/aszostek/Projects/Algorithms/Sort_insertion.py",
-		"/Users/aszostek/Projects/Algorithms/Sort_selection.py",
-		"/Users/aszostek/Workshops/Introduction_to_DS/Assignments/Data/datasci_course_materials/assignment3/dna.py",
-		"/Users/aszostek/Workshops/Introduction_to_DS/Assignments/Data/datasci_course_materials/assignment3/matrix.py",
-		"/Users/aszostek/Workshops/Introduction_to_DS/Assignments/Data/datasci_course_materials/assignment3/asymmetric.py",
-		"/Users/aszostek/Workshops/Introduction_to_DS/Assignments/Data/datasci_course_materials/assignment3/count_friends.py",
-		"/Users/aszostek/Workshops/Introduction_to_DS/Assignments/Data/datasci_course_materials/assignment3/Inverted_index_v1.py",
-		"/Users/aszostek/Workshops/Introduction_to_DS/Assignments/Data/datasci_course_materials/assignment3/relational_join.py",
-		"/Users/aszostek/Projects/Kaggle/Yelp/Code/train_tree.py",
-		"/Users/aszostek/Projects/Kaggle/Yelp/Code/Prepare_data.py",
-		"/Users/aszostek/Workshops/Introduction_to_DS/Assignment1_twitter/Data/datasci_course_materials/assignment1/tweet_sentiment_v2.py",
-		"/Users/aszostek/Desktop/1. scraperwiki",
-		"/Users/aszostek/Workshops/Introduction_to_DS/Assignment1_twitter/Data/datasci_course_materials/assignment1/term_sentiment_v0.py",
-		"/Users/aszostek/Workshops/Introduction_to_DS/Assignment1_twitter/Data/datasci_course_materials/assignment1/top_ten_hash.py",
-		"/Users/aszostek/Projects/d3/firstproject/index.html",
-		"/Users/aszostek/Projects/d3/firstproject/rect_interactive",
-		"/Users/aszostek/Projects/d3/book/d3-book-master/chapter_10/14_div_tooltip.html",
-		"/Users/aszostek/Projects/d3/book/d3-book-master/chapter_11/01_pie.html",
-		"/Users/aszostek/Projects/d3/book/d3-book-master/chapter_10/13_svg_tooltip.html",
-		"/Users/aszostek/Projects/d3/book/d3-book-master/chapter_10/07_sort.html",
-		"/Users/aszostek/Projects/d3/book/d3-book-master/chapter_10/03_hover.html",
-		"/Users/aszostek/Projects/d3/book/d3-book-master/chapter_10/01_start.html",
-		"/Users/aszostek/Projects/d3/firstproject/rectangle_key_join_add_remove",
-		"/Users/aszostek/Projects/d3/firstproject/scatter_plot",
-		"/Users/aszostek/Projects/d3/book/d3-book-master/chapter_09/25_adding_values.html",
-		"/Users/aszostek/Projects/d3/book/d3-book-master/chapter_09/26_removing_values.html",
-		"/Users/aszostek/Projects/d3/book/d3-book-master/chapter_09/28_adding_and_removing.html",
-		"/Users/aszostek/Projects/d3/book/d3-book-master/chapter_09/27_data_join_with_key.html",
-		"/Users/aszostek/Projects/d3/firstproject/rectangle",
-		"/Users/aszostek/Projects/d3/firstproject/rectangle_add_value",
-		"/Users/aszostek/Projects/d3/firstproject/book_axes.html",
-		"/Users/aszostek/Projects/d3/book/d3-book-master/chapter_09/24_clip-path.html"
+		"/Users/aszostek/Projects/Algorithms/Sort_selection.py"
 	],
 	"find":
 	{
@@ -258,6 +301,32 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Random",
+			"hand",
+			"pta",
+			"ptak",
+			"create",
+			"calculate",
+			"columns",
+			"delete_older",
+			"age",
+			"print",
+			"static",
+			"request",
+			"get_max_id",
+			"update",
+			"Twee",
+			"update_all",
+			"decima",
+			"deci",
+			"Tweet",
+			"create",
+			"items",
+			"Database",
+			"select",
+			"] ",
+			"api_from_tweet",
+			"tokens",
 			"item",
 			"import",
 			"requests_",
@@ -277,6 +346,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"tweet_from_api",
 			"review",
 			"reviw"
 		],
@@ -289,49 +359,23 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/Users/aszostek/Projects/Insight/Twitter/mysql_tests.py",
+					"file": "app/views.py",
 					"settings":
 					{
-						"buffer_size": 205,
+						"buffer_size": 11152,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								204,
-								204
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/Users/aszostek/Projects/Insight/Twitter/tests.py",
-					"settings":
-					{
-						"buffer_size": 2078,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2075,
-								2075
+								3879,
+								3879
 							]
 						],
 						"settings":
@@ -340,30 +384,59 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 266.0,
+						"translation.y": 2334.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "app/views.py",
+					"buffer": 1,
+					"file": "app/templates/feed.html",
 					"settings":
 					{
-						"buffer_size": 652,
+						"buffer_size": 2281,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								540,
-								540
+								620,
+								634
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 48.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/Logistic_regression_feature_selection.py",
+					"settings":
+					{
+						"buffer_size": 3722,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2184,
+								2184
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -373,23 +446,133 @@
 				},
 				{
 					"buffer": 3,
-					"file": "app/templates/index.html",
+					"file": "app/Logistic_regression.py",
 					"settings":
 					{
-						"buffer_size": 528,
+						"buffer_size": 6171,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								508,
-								508
+								5651,
+								5651
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/templates/model.html",
+					"settings":
+					{
+						"buffer_size": 4615,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								252,
+								252
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 374.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/templates/index.html",
+					"settings":
+					{
+						"buffer_size": 4226,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3417,
+								3420
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/templates/base.html",
+					"settings":
+					{
+						"buffer_size": 4165,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3197,
+								3229
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1293.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/templates/authors.html",
+					"settings":
+					{
+						"buffer_size": 1559,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								441,
+								441
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -431,6 +614,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 112.0
+	},
 	"replace":
 	{
 		"height": 64.0
@@ -441,6 +628,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"",
+				"run.py"
+			]
 		],
 		"width": 0.0
 	},
@@ -456,6 +647,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 197.0,
+	"side_bar_width": 242.0,
 	"status_bar_visible": true
 }
